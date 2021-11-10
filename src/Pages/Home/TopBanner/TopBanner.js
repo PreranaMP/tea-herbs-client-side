@@ -9,7 +9,7 @@ const TopBanner = () => {
  return (
   <Grid container spacing={2}>
    <Grid item xs={12} md={6}>
-    <img style={{ width: '100%', height: '75%', marginTop: '5px' }} src={banner} />
+    <img style={{ width: '100%', height: '75%', marginTop: '5px' }} src={banner} alt="" />
    </Grid>
    <Grid item xs={12} md={6}>
     <Typography style={{}} sx={{ color: '#2E86C1', mt: 20, mr: 5 }} variant="h4">
