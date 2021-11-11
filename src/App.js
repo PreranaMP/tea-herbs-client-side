@@ -10,6 +10,9 @@ import OrderReview from './Pages/OrderRiview/OrderReview/OrderReview';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import MoreDetails from './Pages/Products/MoreDetails/MoreDetails';
+
 
 
 function App() {
@@ -35,9 +38,10 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route path="/orderreview/:productId">
-              <OrderReview></OrderReview>
-            </Route>
+            <PrivateRoute path="/moredetails/:productId">
+              <MoreDetails></MoreDetails>
+            </PrivateRoute>
+
           </Switch>
         </Router>
       </AuthProvider>

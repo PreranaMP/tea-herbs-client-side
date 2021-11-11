@@ -7,29 +7,32 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
-const Product = (props) => {
- const { id, image, name, price } = props.product
+const Product = ({ product }) => {
+ const { _id, image, name, price } = product;
 
  return (
-  <Grid item xs={4} sm={8} md={6}>
-   <Card sx={{ minWidth: 275, m: 5 }}>
-    <CardContent>
+  <>
+   <Grid item xs={4} sm={8} md={6}>
+    <Card sx={{ minWidth: 275, m: 5 }}>
+     <CardContent>
 
-     <Typography style={{ color: '#2E86C1' }} variant="h5" component="div">
-      {name}
-     </Typography>
-     <img style={{ width: '400px', height: '300px' }} src={image} alt=""></img>
+      <Typography style={{ color: '#2E86C1' }} variant="h5" component="div">
+       {name}
+      </Typography>
+      <img style={{ width: '400px', height: '300px' }} src={image} alt=""></img>
 
-     <Typography style={{ color: 'gray' }} variant="h5">
-      Rs. {price}/-
-     </Typography>
+      <Typography style={{ color: 'gray' }} variant="h5">
+       Rs. {price}/-
+      </Typography>
 
-    </CardContent>
-    <CardActions>
-     <Link style={{ textDecoration: 'none' }} to={`/orderreview/${id}`}><Button style={{ backgroundColor: '#A9CCE3', color: 'white' }} size="small">Buy Now</Button></Link>
-    </CardActions>
-   </Card>
-  </Grid>
+     </CardContent>
+     <CardActions>
+      <Link style={{ textDecoration: 'none' }} to={`/moredetails/${_id}`}><Button style={{ backgroundColor: '#A9CCE3', color: 'white' }} size="small">More Details</Button></Link>
+     </CardActions>
+    </Card>
+   </Grid>
+
+  </>
  );
 };
 
