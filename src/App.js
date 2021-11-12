@@ -12,6 +12,7 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import MoreDetails from './Pages/Products/MoreDetails/MoreDetails';
+import Dashboard from './Pages/DashBoard/Dashboard/Dashboard';
 
 
 
@@ -35,11 +36,15 @@ function App() {
             <Route path="/products">
               <Products></Products>
             </Route>
+
             <Route exact path="/">
               <Home></Home>
             </Route>
             <PrivateRoute path="/moredetails/:productId">
               <MoreDetails></MoreDetails>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
             </PrivateRoute>
 
           </Switch>

@@ -32,7 +32,7 @@ const MoreDetails = () => {
   }, [])
   const { user } = useAuth();
   const initialInfo = { displayName: user.displayName, email: user.email, phone: '', homeAddress: '' }
-  const [orderInfo, setOrderInfo] = useState({ initialInfo });
+  const [orderInfo, setOrderInfo] = useState(initialInfo);
 
   const handleOnBlur = e => {
     const field = e.target.name;
@@ -51,6 +51,7 @@ const MoreDetails = () => {
 
     }
     // send to the server
+
     fetch('http://localhost:5000/orders', {
       method: 'POST',
       headers: {
@@ -61,6 +62,7 @@ const MoreDetails = () => {
       .then(res => res.json())
       .then(data => {
         if (data.insertedId) {
+
           setOrderSuccess(true)
           handleClose();
         }
