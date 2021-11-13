@@ -6,7 +6,7 @@ import { Container, Typography } from '@mui/material';
 const About = () => {
  return (
   <>
-   <Typography sx={{ color: '#2E86C1', mb: 5 }} variant="h4">
+   <Typography sx={{ color: '#2E86C1', mb: 5 }} variant="h3">
     Why Us?
    </Typography>
    <Container>

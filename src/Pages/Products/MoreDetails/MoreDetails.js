@@ -26,7 +26,7 @@ const MoreDetails = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${productId}`)
+    fetch(`https://infinite-coast-95568.herokuapp.com/products/${productId}`)
       .then(res => res.json())
       .then(data => setProduct(data))
   }, [])
@@ -52,7 +52,7 @@ const MoreDetails = () => {
     }
     // send to the server
 
-    fetch('http://localhost:5000/orders', {
+    fetch('https://infinite-coast-95568.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
