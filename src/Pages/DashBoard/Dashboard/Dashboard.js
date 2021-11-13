@@ -6,12 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -28,10 +23,10 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../makeAdmin/makeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import useAuth from '../../../hooks/useAuth';
-import ManageOrders from '../ManageOrders/ManageOrders';
 import Pay from '../Pay/Pay';
 import Review from '../Review/Review';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import ManageAllProducts from '../ManageOrders/ManageAllProducts';
 
 
 
@@ -43,7 +38,7 @@ function Dashboard(props) {
 
  let { path, url } = useRouteMatch();
 
- const { admin } = useAuth();
+ const { admin, user, logOut } = useAuth();
 
  const handleDrawerToggle = () => {
   setMobileOpen(!mobileOpen);
@@ -59,13 +54,15 @@ function Dashboard(props) {
    <Link style={{ textDecoration: 'none', color: '#2E86C1' }} to={`${url}/pay`}><Button variant="inherit">Pay</Button> </Link>
    <br />
    <Link style={{ textDecoration: 'none', color: '#2E86C1' }} to={`${url}/review`}><Button variant="inherit">Review</Button> </Link>
+
    {admin && <Box>
-    <Link style={{ textDecoration: 'none', color: '#2E86C1' }} to={`${url}/manageOrders`}><Button variant="inherit">Manage Orders</Button> </Link>
+    <Link style={{ textDecoration: 'none', color: '#2E86C1' }} to={`${url}/manageAllProducts`}><Button variant="inherit">Manage all Products </Button> </Link>
     <Link style={{ textDecoration: 'none', color: '#2E86C1' }} to={`${url}/makeAdmin`}><Button variant="inherit">Make Admin</Button> </Link>
     <Link style={{ textDecoration: 'none', color: '#2E86C1' }} to={`${url}/addProduct`}><Button variant="inherit">Add a product</Button> </Link>
     <List></List>
    </Box>}
-
+   <br />
+   <Button onClick={logOut} style={{ backgroundColor: '#A9CCE3', color: 'white' }} variant="contained">Logout</Button>
 
 
 
@@ -151,8 +148,8 @@ function Dashboard(props) {
      <AdminRoute path={`${path}/addProduct`}>
       <AddProduct></AddProduct>
      </AdminRoute>
-     <AdminRoute path={`${path}/manageOrders`}>
-      <ManageOrders></ManageOrders>
+     <AdminRoute path={`${path}/manageAllProducts`}>
+      <ManageAllProducts></ManageAllProducts>
      </AdminRoute>
      <Route path={`${path}/pay`}>
       <Pay></Pay>

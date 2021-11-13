@@ -29,17 +29,13 @@ const Navigation = () => {
               <Button sx={{ mx: 3 }} style={{ textDecoration: 'none', color: 'white' }} color="inherit">Home</Button>
             </NavLink>
 
+            <nav style={{ textDecoration: 'none' }}>
+              <Button sx={{ mx: 3 }} color="inherit"><a style={{ textDecoration: 'none', color: 'white' }} href="#topSelections">Top Selections</a></Button>
+            </nav>
 
-
-
-
-            <NavLink style={{ textDecoration: 'none' }} to="/topselections">
-              <Button sx={{ mx: 3 }} style={{ textDecoration: 'none', color: 'white' }} color="inherit">Top Selections</Button>
-            </NavLink>
-
-            <NavLink style={{ textDecoration: 'none' }} to="reviews">
-              <Button sx={{ mx: 3 }} style={{ textDecoration: 'none', color: 'white' }} color="inherit">Reviews</Button>
-            </NavLink>
+            <nav style={{ textDecoration: 'none' }} to="reviews">
+              <Button sx={{ mx: 3 }} color="inherit"><a style={{ textDecoration: 'none', color: 'white' }} href="#reviews">Reviews</a> </Button>
+            </nav>
 
             {
               user?.email ?
